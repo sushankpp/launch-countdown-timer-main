@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&display=swap');
+
+:root {
+  --Grayish-blue: hsl(237, 18%, 59%);
+  --Soft-red: hsl(345, 95%, 68%);
+  --White: hsl(0, 0%, 100%);
+  --Dark-desaturated-blue: hsl(236, 21%, 26%);
+  --Very-dark-blue: hsl(235, 16%, 14%);
+  --Very-dark-black: hsl(234, 17%, 12%);
+  --font-family: 'Red Hat Text', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(/images/bg-stars.svg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: var(--Very-dark-black);
+  color: var(--White);
+  font-family: var(--font-family);
+}
+
+h1 {
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-top: -5rem;
+  margin-bottom: 4rem;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 530px;
+}
+
+.timer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.days,
+.hours,
+.minutes,
+.seconds {
+  padding: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+span {
+  font-size: 55px;
+  color: var(--Soft-red);
+}
+
+span::before {
+  content: '';
+  width: 80%;
+  height: 40px;
+  position: absolute;
+  top: 15%;
+  left: 9%;
+  background-color: var(--Dark-desaturated-blue);
+  z-index: -1;
+  border-radius: 5px;
+  transform: translateZ(-10px);
+  animation: moveDown 2s linear infinite;
+}
+
+span::after {
+  content: '';
+  width: 80%;
+  height: 40px;
+  position: absolute;
+  top: 41%;
+  left: 9%;
+  background-color: var(--Dark-desaturated-blue);
+  z-index: -1;
+  border-radius: 5px;
+  transform: translateZ(10px);
+  animation: moveUp 2s linear infinite;
+}
+
+.axis {
+  width: 73%;
+  height: 10px;
+  position: absolute;
+  background-color: var(--Dark-desaturated-blue);
+  z-index: -1;
+  top: 36%;
+  left: 13%;
+}
+
+p {
+  margin-top: 2rem;
+  font-size: 14px;
+  color: var(--Grayish-blue);
+  text-transform: uppercase;
+}
+
+footer {
+  background-image: url(/images/pattern-hills.svg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 201px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer a{
+  padding: 1rem;
+}
+
+/* @keyframes moveDown {
+  from {
+    transform: translateZ(10px);
+  }
+  to{
+    transform: translateZ(-10px);
+  }
+}
+
+@keyframes moveUp {
+  from {
+    transform: translateZ(-10px);
+  }
+  to {
+    transform: translateZ(10px);
+  }
+} */
